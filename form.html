@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <title>Form</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <br>
+    <br> 
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-4">
+        <form name ="signup" action="/#" onsubmit="return validateForm()" method="post" >
+          <h2 class="Display-1">Sign Up</h2>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Username</label>
+            <input type="text" class="form-control" name="username1"/>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="inputEmail1"/>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" name="inputPassword1" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Confirm password</label>
+            <input type="password" class="form-control" name="confirmPassword1" />
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="rememberme1" />
+            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+          </div>
+          <button type="submit" value="Submit" class="btn btn-primary">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  //javascript native code for form validation
+var timeoutInMiliseconds = 5000;
+var timeoutId; 
+  
+ function validateForm(){
+   let uName= document.forms["signup"]["username1"].value;
+   let eMail= document.forms["signup"]["inputEmail1"].value;
+   let mPwd = document.forms["signup"]["inputPassword1"].value;
+   let cPwd = document.forms["signup"]["confirmPassword1"].value;
+   let passHeight = mPwd.length; //regex alternative /(?=.{8})
+   let val1=/(?=.*[a-z])/g;
+   let val2=/(?=.*[A-Z])/g;
+   let val3=/(?=.*[0-9])/g;
+   let val4=/(?=.*[(?=.*[!@#\$%\^\&*\)\(+=.,_-])/g;
+  
+   
+   if(uName == "" || eMail == "" || mPwd == "" || cPwd == ""){
+     alert("You have to fill all fields.");
+     return false;
+   }if(cPwd !== mPwd){
+     alert("Error,no matching passwords");
+     return false;
+   }if(passHeight < 8){
+     alert("Error,the minimum password length is 8");
+     return false;
+   }if (val1.test(mPwd) !== true){
+    alert("Password should have atleast one Lower case letter");
+    return false;
+   }if (val2.test(mPwd) !== true){
+    alert("Password should have atleast one Uppercase case letter");
+    return false;
+   }if (val3.test(mPwd) !== true){
+    alert("Password should have atleast one number");
+    return false;
+   }if (val4.test(mPwd) !== true){
+    alert("Password should have atleast one symbol");
+    return false;
+   }
+  }
+
+function startTimer() { 
+    // window.setTimeout returns an Id that can be used to start and stop a timer
+    timeoutId = window.setTimeout(doInactive, timeoutInMiliseconds)
+} 
+function resetTimer() { 
+    window.clearTimeout(timeoutId)
+    startTimer();
+}
+function doInactive() {
+alert("\tAre you still there?,we will redirect you due to the home page due to inactivity");
+ window.location.replace('https://www.octagonafrica.com');
+    
+}
+ 
+function setupTimers () {
+    document.addEventListener("mousemove", resetTimer, false);
+    document.addEventListener("mousedown", resetTimer, false);
+    document.addEventListener("keypress", resetTimer, false);
+    document.addEventListener("touchmove", resetTimer, false);
+     
+    startTimer();
+}
+
+setupTimers();
+
+
+
+</script>
+
+</body>
+</html>
