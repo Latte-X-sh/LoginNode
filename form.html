@@ -45,10 +45,11 @@
   </div>
 </div>
 <script>
-  //javascript native code for form validation
-var timeoutInMiliseconds = 5000;
+  //javascript native code for form validation //No jQuery implemented just vanilla js
+  //global varibles for mouse tracking function .
+var timeoutInMiliseconds = 5000;//time variable in miliseconds,can be changed to desired range.
 var timeoutId; 
-  
+  //validation function.
  function validateForm(){
    let uName= document.forms["signup"]["username1"].value;
    let eMail= document.forms["signup"]["inputEmail1"].value;
@@ -95,7 +96,7 @@ function resetTimer() {
 }
 function doInactive() {
 alert("\tAre you still there?,we will redirect you due to the home page due to inactivity");
- window.location.replace('https://www.octagonafrica.com');
+ window.location.replace('https://www.octagonafrica.com');//page redirection.
     
 }
  
