@@ -15,7 +15,7 @@
     <br> 
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col-md-4">
+      <div class="col-md-5">
         <form name ="signup" action="/#" onsubmit="return validateForm()" method="post" >
           <h2 class="Display-1">Sign Up</h2>
           <div class="mb-3">
@@ -35,9 +35,17 @@
             <input type="password" class="form-control" name="confirmPassword1" />
           </div>
           <div class="mb-3 form-check">
+            <div class ="row">
+              <div class="col-6">
             <input type="checkbox" class="form-check-input" id="rememberme1" />
             <label class="form-check-label" for="exampleCheck1">Remember me</label>
           </div>
+          <div class="col-6 ">
+            <a href="login_page.html">Already have an account?</a>
+          </div>
+        </div>
+          </div>
+          
           <button type="submit" value="Submit" class="btn btn-primary">Sign Up</button>
         </form>
       </div>
@@ -85,7 +93,7 @@ var timeoutId;
     return false;
    }
   }
-
+/*Timer function that notices the movement of your curson and then redirects you cause of inactivity to another page.
 function startTimer() { 
     // window.setTimeout returns an Id that can be used to start and stop a timer
     timeoutId = window.setTimeout(doInactive, timeoutInMiliseconds)
@@ -96,7 +104,7 @@ function resetTimer() {
 }
 function doInactive() {
 alert("\tAre you still there?,we will redirect you due to the home page due to inactivity");
- window.location.replace('https://www.octagonafrica.com');//page redirection.
+ window.location.replace('');//page redirection.
     
 }
  
@@ -109,7 +117,7 @@ function setupTimers () {
     startTimer();
 }
 
-setupTimers();
+setupTimers();*/
 
 
 
