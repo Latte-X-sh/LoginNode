@@ -1,2 +1,2 @@
-# LoginNode
-Node JS login system with MYSQL as the database.
+# LoginPHP
+PHP login system with MYSQL as the database.
